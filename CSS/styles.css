@@ -10,15 +10,18 @@
 
 body {
     overflow-x: hidden;
+    
 }
 
 
 header {
     
+    position: fixed;
     margin:auto;
     width: 100%;
     height: 6.25rem;
     background-color: rgb(0, 0, 0);
+    border-bottom: 4px solid var(--border-menu-mobile);
     
     
 }
@@ -34,13 +37,20 @@ header {
 
 }
 
-/* logotipo */
-.logo-wrapper {
-    background-color: rgba(0, 0, 255, 0);   
+.button-header{
+    display:none;
 }
-.logo-wrapper img {
-    width:10rem;
-    height:2rem;  
+
+/* logotipo */
+
+.img-logo {
+    background-image: url("/assets/logo-mobile.svg");
+    background-size:cover;
+    background-position: center;
+    width: 171px;
+    height:32px;
+     
+     
 }
 
 
@@ -78,14 +88,15 @@ header {
 /* sidebar */
 
 .navbar {
-    width:20rem;
+    width:1%;
     margin-top: 6rem;
     height:100vh;
     position:fixed;
     right: -20rem;
     top:0;
     opacity: 0;
-    transition: all 0.4s;
+    transition: all 0.2s;
+    z-index: 0;
     
 
     background-color:rgb(7, 7, 7);
@@ -93,8 +104,11 @@ header {
 }
 
 .show-menu .navbar {
-   right: 0;
-   opacity: 1;
+    width:100%;
+    right: 0;
+    opacity: 1;
+    z-index: 3;
+   
     
     
 }
@@ -120,9 +134,10 @@ header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-menu-mobile);
-    width:20rem;
+    width:inherit;
     height:4rem;
     padding-left: 1.5rem;
+    transition: all .5s
 
 }
 
@@ -131,7 +146,7 @@ header {
 }
 
 .flex-nav li:hover {
-    border-left: 5px solid rgb(140, 0, 255);
+    border-left: 20px solid rgb(140, 0, 255);
 }
 
 .flex-nav a{
@@ -143,4 +158,254 @@ header {
     width: inherit;
     height:inherit;
     
+}
+
+.menu-desktop{
+    display:none;
+}
+
+
+
+
+
+/* main */
+
+main {
+    width:100%;
+    height:100vh;
+    display: flex;
+    background-color: black;
+    background-image: url(/assets/blur-mobile.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    justify-content: center;
+    
+}
+
+.blur-background{
+    width:inherit;
+    height:inherit;
+    position: absolute;
+    display:none;
+
+}
+
+.blur-left{
+    background-image: url("/assets/blur-1.png");
+    background-position: center;
+    background-size: cover;
+    width:40rem;
+    height:40rem;
+    position:absolute;
+    bottom:0;
+}
+
+.blur-right{
+    background-image: url("/assets/blur-2.png");
+    background-position: center;
+    background-size: cover;
+    width:40rem;
+    height:40rem;
+    position:absolute;
+    right:0
+}
+
+.mainpage{
+    width:inherit;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slogan {
+    margin-top: 10rem;
+    max-width: 373px;
+    height: 128px;
+    
+}
+
+.slogan h2{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-shadow: 0px 6px 7px rgba(150, 150, 152, 0.68);
+
+    color: #FFFFFF;
+}
+
+
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:10rem;
+    height:10rem;
+    font-family: Manrope;
+    font-weight: bold;
+    color: var(--text-color-menu-mobile);
+    background-color: rgba(66, 4, 102, 0.315);
+    border: 1px solid var(--button);
+    border-radius: 6px;
+    margin-top: 4rem;
+    cursor: pointer;
+    transition: all .7s;
+
+    -webkit-box-shadow: 0px 0px 29px -2px rgba(113, 7, 199, 0.651);
+    -moz-box-shadow: 0px 0px 29px -2px rgba(96, 4, 172, 0.795);
+    box-shadow: 0px 0px 29px -2px rgb(141, 10, 202);
+
+}
+
+button:hover{
+    background-color: rgba(67, 0, 100, 0.582);
+    
+}
+
+button img {
+    margin-left: 1rem;
+}
+
+
+.slogan2 {
+    background-color: rgba(240, 255, 255, 0);
+    width:100%;
+    text-align: center;
+    margin-top: 5rem;
+    text-shadow: 0px 3px 14px rgb(0, 0, 0);
+}
+
+.slogan2 h1 {
+    color: var(--text-color-menu-mobile);
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 68px;
+
+    letter-spacing: -0.03em;
+    text-shadow: 0px 3px 14px rgba(0, 0, 0, 0.308);
+}
+
+#GCD {
+    color: black;
+    text-shadow: -1px -1px 4px #8257e5,
+                 -2px -1px 10px #8257e5,
+                 -2px 0px 0px rgb(140 0 255),
+                  3px 0px 0px rgb(105 0 191);
+}
+
+.imgCoffee-area {
+    background-color: rgba(0, 255, 255, 0);
+    width: 100%;
+    height:100%;
+    
+}
+
+.img-coffee {
+    
+    width:100%;
+    height:100%;
+    background-image: url(/assets/rocket-coffee.png);
+    background-size:contain;
+    background-position:bottom ;
+    background-repeat: no-repeat;
+    
+}
+
+.blur1 {
+    background-image: url(/assets/blur-mobile.png);
+}
+
+
+
+@media (min-width:1120px) {
+   
+    header{
+        display: flex;
+        justify-content: center;
+        background-color: #8257e500;
+        border:none;
+        
+        
+    }
+
+    #hamburguer{
+        display: none;
+    }
+    .section-header{
+        width:1120px;
+        margin-top: 2rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        
+        
+    }
+
+    .menu-desktop{
+        display:flex;
+        
+        
+    }
+    .menu-desktop ul{
+        display:inline-flex;
+    }
+
+    .menu-desktop ul li {
+        margin:3rem
+    }
+
+    .menu-desktop ul li a{
+        font-family: Manrope;
+        font-size: 16px;
+        color: var(--text-color-menu-mobile);
+        font-weight: 400;
+    }
+
+    .img-logo {
+        background-image: url("/assets/logo-desktop.svg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width:5rem;
+        height:5rem; 
+         
+    }
+
+    .button-header{
+        display:flex;
+        height:3rem;
+        margin:0;
+        
+
+    }
+
+    .slogan h2{
+        display:none;
+    }
+
+    button {
+        display:none
+    }
+
+    .slogan2 h1{
+        font-size: 70px;
+    }
+
+    main {
+        background-image: none;
+    }
+
+    .blur-background{
+        display:initial;
+    }
+
 }

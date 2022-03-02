@@ -8,8 +8,5 @@ document.querySelectorAll("#Close-menu").forEach(function(element) {
 
 
 
-// function openMenu() {
-//     document.querySelector(".hamburguer").classList.toggle = ("hamburger-close")
-// }
 
 
